@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BCA Lab Programs</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -48,64 +48,64 @@
 
     <div class="max-w-3xl mx-auto space-y-4">
         
-        <header id="page-header" class="text-center py-6 mb-4 animate-card delay-1">
-            <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-50 rounded-2xl mb-4 shadow-inner overflow-hidden">
-                <img src="ic_icon.png" class="w-16 h-16 rounded-2xl">
+        <header class="text-center py-6 mb-4 animate-card delay-1">
+            <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-2xl mb-4 shadow-inner">
+                <img src="ic_icon.png" class="rounded-2xl"></img>
             </div>
             <h1 class="text-3xl font-bold text-slate-900 tracking-tight">BCA Lab Programs</h1>
             <p class="mt-2 text-slate-500">A quick reference for Java syntax and common BCA laboratory practical programs.</p>
         </header>
 
         <div class="animate-card delay-2 bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden transition-shadow hover:shadow-md">
-    <button onclick="toggleSection(this)" class="w-full text-left px-6 py-4 border-b border-slate-100 flex items-center bg-slate-50/50 hover:bg-slate-100 transition-colors focus:outline-none">
-        <i class="w-5 h-5 text-blue-500 mr-3">👋🏻</i>
-        <h2 class="text-lg font-semibold text-slate-800 flex-1">Hello World</h2>
-        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transform transition-transform duration-300 rotate-180 icon-chevron"></i>
-    </button>
-    <div class="accordion-content is-open">
-        <div class="accordion-inner">
-            <div class="p-6">
-                <div class="bg-slate-900 rounded-xl p-4 relative pt-12">
-                    <button onclick="copyCode(this)" class="absolute top-3 right-3 p-2 bg-slate-800 text-slate-400 rounded-lg hover:text-white hover:bg-slate-700 transition-colors focus:outline-none" title="Copy code">
-                        <i data-lucide="copy" class="w-4 h-4 icon-copy"></i>
-                    </button>
-                    <div class="overflow-x-auto dark-scrollbar shadow-inner">
-                        <pre><code class="text-blue-100 text-sm font-mono leading-relaxed">public class Sample {
+            <button onclick="toggleSection(this)" class="w-full text-left px-6 py-4 border-b border-slate-100 flex items-center bg-slate-50/50 hover:bg-slate-100 transition-colors focus:outline-none">
+                <i class="w-5 h-5 text-blue-500 mr-3">👋🏻</i>
+                <h2 class="text-lg font-semibold text-slate-800 flex-1">Hello World</h2>
+                <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transform transition-transform duration-300 rotate-180 icon-chevron"></i>
+            </button>
+            <div class="accordion-content is-open">
+                <div class="accordion-inner">
+                    <div class="p-6">
+                        <div class="bg-slate-900 rounded-xl p-4 relative pt-12">
+                            <button onclick="copyCode(this)" class="absolute top-3 right-3 p-2 bg-slate-800 text-slate-400 rounded-lg hover:text-white hover:bg-slate-700 transition-colors focus:outline-none" title="Copy code">
+                                <i data-lucide="copy" class="w-4 h-4 icon-copy"></i>
+                            </button>
+                            <div class="overflow-x-auto dark-scrollbar shadow-inner">
+<pre><code class="text-blue-100 text-sm font-mono leading-relaxed">public class Sample {
     public static void main(String args[]) {
         System.out.println("Hello World!");
     }
 }</code></pre>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
 
-<div class="animate-card delay-3 bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden transition-shadow hover:shadow-md">
-    <button onclick="toggleSection(this)" class="w-full text-left px-6 py-4 border-b border-slate-100 flex items-center bg-slate-50/50 hover:bg-slate-100 transition-colors focus:outline-none">
-        <i data-lucide="keyboard" class="w-5 h-5 text-emerald-500 mr-3"></i>
-        <h2 class="text-lg font-semibold text-slate-800 flex-1">Read Input</h2>
-        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transform transition-transform duration-300 icon-chevron"></i>
-    </button>
-    <div class="accordion-content">
-        <div class="accordion-inner">
-            <div class="p-6 space-y-4">
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                    <div class="flex items-start bg-amber-50 rounded-lg p-4 border border-amber-100 text-sm text-amber-800 flex-1">
-                        <i data-lucide="info" class="w-5 h-5 mr-3 flex-shrink-0 text-amber-500 mt-0.5"></i>
-                        <p>All input needs to be entered in the <strong>Input tab</strong> prior to compilation.</p>
-                    </div>
-                    <a href="https://od.lk/s/NTBfMzQ4NDI4NThf/compiler_input.mp4" target="_blank" class="inline-flex justify-center items-center text-sm font-medium text-blue-600 hover:text-blue-700 bg-blue-50 px-4 py-2 rounded-lg transition-colors whitespace-nowrap">
-                        <i data-lucide="play-circle" class="w-4 h-4 mr-1.5"></i> Watch Video
-                    </a>
-                </div>
-                <div class="bg-slate-900 rounded-xl p-4 relative pt-12">
-                    <button onclick="copyCode(this)" class="absolute top-3 right-3 p-2 bg-slate-800 text-slate-400 rounded-lg hover:text-white hover:bg-slate-700 transition-colors focus:outline-none" title="Copy code">
-                        <i data-lucide="copy" class="w-4 h-4 icon-copy"></i>
-                    </button>
-                    <div class="overflow-x-auto dark-scrollbar shadow-inner">
-                        <pre><code class="text-blue-100 text-sm font-mono leading-relaxed">import java.util.Scanner;
+        <div class="animate-card delay-3 bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden transition-shadow hover:shadow-md">
+            <button onclick="toggleSection(this)" class="w-full text-left px-6 py-4 border-b border-slate-100 flex items-center bg-slate-50/50 hover:bg-slate-100 transition-colors focus:outline-none">
+                <i data-lucide="keyboard" class="w-5 h-5 text-emerald-500 mr-3"></i>
+                <h2 class="text-lg font-semibold text-slate-800 flex-1">Read Input</h2>
+                <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transform transition-transform duration-300 icon-chevron"></i>
+            </button>
+            <div class="accordion-content">
+                <div class="accordion-inner">
+                    <div class="p-6 space-y-4">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                            <div class="flex items-start bg-amber-50 rounded-lg p-4 border border-amber-100 text-sm text-amber-800 flex-1">
+                                <i data-lucide="info" class="w-5 h-5 mr-3 flex-shrink-0 text-amber-500 mt-0.5"></i>
+                                <p>All input needs to be entered in the <strong>Input tab</strong> prior to compilation.</p>
+                            </div>
+                            <a href="https://od.lk/s/NTBfMzQ4NDI4NThf/compiler_input.mp4" target="_blank" class="inline-flex justify-center items-center text-sm font-medium text-blue-600 hover:text-blue-700 bg-blue-50 px-4 py-2 rounded-lg transition-colors whitespace-nowrap">
+                                <i data-lucide="play-circle" class="w-4 h-4 mr-1.5"></i> Watch Video
+                            </a>
+                        </div>
+                        <div class="bg-slate-900 rounded-xl p-4 relative pt-12">
+                            <button onclick="copyCode(this)" class="absolute top-3 right-3 p-2 bg-slate-800 text-slate-400 rounded-lg hover:text-white hover:bg-slate-700 transition-colors focus:outline-none" title="Copy code">
+                                <i data-lucide="copy" class="w-4 h-4 icon-copy"></i>
+                            </button>
+                            <div class="overflow-x-auto dark-scrollbar shadow-inner">
+<pre><code class="text-blue-100 text-sm font-mono leading-relaxed">import java.util.Scanner;
   
 public class Sample {
     public static void main(String args[]) {
@@ -120,28 +120,28 @@ public class Sample {
         System.out.println(name + " is " + age + " years old.");
     }
 }</code></pre>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
 
-<div class="animate-card delay-4 bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden transition-shadow hover:shadow-md">
-    <button onclick="toggleSection(this)" class="w-full text-left px-6 py-4 border-b border-slate-100 flex items-center bg-slate-50/50 hover:bg-slate-100 transition-colors focus:outline-none">
-        <i data-lucide="hash" class="w-5 h-5 text-purple-500 mr-3"></i>
-        <h2 class="text-lg font-semibold text-slate-800 flex-1">Neon Number</h2>
-        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transform transition-transform duration-300 icon-chevron"></i>
-    </button>
-    <div class="accordion-content">
-        <div class="accordion-inner">
-            <div class="p-6">
-                <div class="bg-slate-900 rounded-xl p-4 relative pt-12">
-                    <button onclick="copyCode(this)" class="absolute top-3 right-3 p-2 bg-slate-800 text-slate-400 rounded-lg hover:text-white hover:bg-slate-700 transition-colors focus:outline-none" title="Copy code">
-                        <i data-lucide="copy" class="w-4 h-4 icon-copy"></i>
-                    </button>
-                    <div class="overflow-x-auto dark-scrollbar shadow-inner">
-                        <pre><code class="text-blue-100 text-sm font-mono leading-relaxed">import java.util.Scanner;
+        <div class="animate-card delay-4 bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden transition-shadow hover:shadow-md">
+            <button onclick="toggleSection(this)" class="w-full text-left px-6 py-4 border-b border-slate-100 flex items-center bg-slate-50/50 hover:bg-slate-100 transition-colors focus:outline-none">
+                <i data-lucide="hash" class="w-5 h-5 text-purple-500 mr-3"></i>
+                <h2 class="text-lg font-semibold text-slate-800 flex-1">Neon Number</h2>
+                <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transform transition-transform duration-300 icon-chevron"></i>
+            </button>
+            <div class="accordion-content">
+                <div class="accordion-inner">
+                    <div class="p-6">
+                        <div class="bg-slate-900 rounded-xl p-4 relative pt-12">
+                            <button onclick="copyCode(this)" class="absolute top-3 right-3 p-2 bg-slate-800 text-slate-400 rounded-lg hover:text-white hover:bg-slate-700 transition-colors focus:outline-none" title="Copy code">
+                                <i data-lucide="copy" class="w-4 h-4 icon-copy"></i>
+                            </button>
+                            <div class="overflow-x-auto dark-scrollbar shadow-inner">
+<pre><code class="text-blue-100 text-sm font-mono leading-relaxed">import java.util.Scanner;
 
 class Sample {
     public static void main(String args[]) {
@@ -163,28 +163,28 @@ class Sample {
         }
     }
 }</code></pre>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
 
-<div class="animate-card delay-5 bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden transition-shadow hover:shadow-md">
-    <button onclick="toggleSection(this)" class="w-full text-left px-6 py-4 border-b border-slate-100 flex items-center bg-slate-50/50 hover:bg-slate-100 transition-colors focus:outline-none">
-        <i data-lucide="graduation-cap" class="w-5 h-5 text-orange-500 mr-3"></i>
-        <h2 class="text-lg font-semibold text-slate-800 flex-1">Student Detail</h2>
-        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transform transition-transform duration-300 icon-chevron"></i>
-    </button>
-    <div class="accordion-content">
-        <div class="accordion-inner">
-            <div class="p-6">
-                <div class="bg-slate-900 rounded-xl p-4 relative pt-12">
-                    <button onclick="copyCode(this)" class="absolute top-3 right-3 p-2 bg-slate-800 text-slate-400 rounded-lg hover:text-white hover:bg-slate-700 transition-colors focus:outline-none" title="Copy code">
-                        <i data-lucide="copy" class="w-4 h-4 icon-copy"></i>
-                    </button>
-                    <div class="overflow-x-auto dark-scrollbar shadow-inner">
-                        <pre><code class="text-blue-100 text-sm font-mono leading-relaxed">import java.util.Scanner;
+        <div class="animate-card delay-5 bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden transition-shadow hover:shadow-md">
+            <button onclick="toggleSection(this)" class="w-full text-left px-6 py-4 border-b border-slate-100 flex items-center bg-slate-50/50 hover:bg-slate-100 transition-colors focus:outline-none">
+                <i data-lucide="graduation-cap" class="w-5 h-5 text-orange-500 mr-3"></i>
+                <h2 class="text-lg font-semibold text-slate-800 flex-1">Student Detail</h2>
+                <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transform transition-transform duration-300 icon-chevron"></i>
+            </button>
+            <div class="accordion-content">
+                <div class="accordion-inner">
+                    <div class="p-6">
+                        <div class="bg-slate-900 rounded-xl p-4 relative pt-12">
+                            <button onclick="copyCode(this)" class="absolute top-3 right-3 p-2 bg-slate-800 text-slate-400 rounded-lg hover:text-white hover:bg-slate-700 transition-colors focus:outline-none" title="Copy code">
+                                <i data-lucide="copy" class="w-4 h-4 icon-copy"></i>
+                            </button>
+                            <div class="overflow-x-auto dark-scrollbar shadow-inner">
+<pre><code class="text-blue-100 text-sm font-mono leading-relaxed">import java.util.Scanner;
 
 class Student
 {
@@ -228,28 +228,28 @@ class StudentDetails
     }
 }
 </code></pre>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
 
-<div class="animate-card delay-5 bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden transition-shadow hover:shadow-md">
-    <button onclick="toggleSection(this)" class="w-full text-left px-6 py-4 border-b border-slate-100 flex items-center bg-slate-50/50 hover:bg-slate-100 transition-colors focus:outline-none">
-        <i data-lucide="box" class="w-5 h-5 text-rose-500 mr-3"></i>
-        <h2 class="text-lg font-semibold text-slate-800 flex-1">Classes</h2>
-        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transform transition-transform duration-300 icon-chevron"></i>
-    </button>
-    <div class="accordion-content">
-        <div class="accordion-inner">
-            <div class="p-6">
-                <div class="bg-slate-900 rounded-xl p-4 relative pt-12">
-                    <button onclick="copyCode(this)" class="absolute top-3 right-3 p-2 bg-slate-800 text-slate-400 rounded-lg hover:text-white hover:bg-slate-700 transition-colors focus:outline-none" title="Copy code">
-                        <i data-lucide="copy" class="w-4 h-4 icon-copy"></i>
-                    </button>
-                    <div class="overflow-x-auto dark-scrollbar shadow-inner">
-                        <pre><code class="text-blue-100 text-sm font-mono leading-relaxed">public class Sample {
+        <div class="animate-card delay-5 bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden transition-shadow hover:shadow-md">
+            <button onclick="toggleSection(this)" class="w-full text-left px-6 py-4 border-b border-slate-100 flex items-center bg-slate-50/50 hover:bg-slate-100 transition-colors focus:outline-none">
+                <i data-lucide="box" class="w-5 h-5 text-rose-500 mr-3"></i>
+                <h2 class="text-lg font-semibold text-slate-800 flex-1">Classes</h2>
+                <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transform transition-transform duration-300 icon-chevron"></i>
+            </button>
+            <div class="accordion-content">
+                <div class="accordion-inner">
+                    <div class="p-6">
+                        <div class="bg-slate-900 rounded-xl p-4 relative pt-12">
+                            <button onclick="copyCode(this)" class="absolute top-3 right-3 p-2 bg-slate-800 text-slate-400 rounded-lg hover:text-white hover:bg-slate-700 transition-colors focus:outline-none" title="Copy code">
+                                <i data-lucide="copy" class="w-4 h-4 icon-copy"></i>
+                            </button>
+                            <div class="overflow-x-auto dark-scrollbar shadow-inner">
+<pre><code class="text-blue-100 text-sm font-mono leading-relaxed">public class Sample {
     public static void main(String args[]) {
         Employee empOne = new Employee("James Smith");
         empOne.empAge(26);
@@ -288,39 +288,49 @@ class Employee {
         System.out.println("Salary:" + salary);
     }
 }</code></pre>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
+        </div>
+        
+        <footer class="text-center py-8 mt-4 animate-card delay-5">
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-2 text-sm text-slate-500">
+                <span>&copy; <span id="dynamic-year"></span> BCA N.H. Java Compiler</span>
+                <span class="hidden sm:inline w-1 h-1 bg-slate-300 rounded-full"></span>
+                <span>
+                    Built by 
+                    <a href="https://im-ayu-sh.netlify.app/" class="font-semibold text-slate-700 hover:text-blue-600 hover:underline transition-colors duration-200">
+                        Ayush Patil
+                    </a>
+                </span>
+            </div>
+        </footer>
 
-    </div>
+    <!--</div>-->
 
     <script>
         // Initialize Icons
         lucide.createIcons();
         
-        // Dynamic Year
+        //year
         document.getElementById('dynamic-year').textContent = new Date().getFullYear();
 
-        // Optional: Hide Header/Footer if viewed inside the Mobile App
-        // Just append "?source=app" to the URL when loading it in your app's WebView
-        if (window.location.search.includes('source=app')) {
-            document.getElementById('page-header').style.display = 'none';
-            document.getElementById('page-footer').style.display = 'none';
-        }
-
-        // Accordion Logic
+        // Accordion Logic with Smooth Grid Animation
         function toggleSection(clickedButton) {
             const currentContent = clickedButton.nextElementSibling;
             const currentIcon = clickedButton.querySelector('.icon-chevron');
             
+            // First, cleanly close all other sections
             const allButtons = document.querySelectorAll('button[onclick="toggleSection(this)"]');
             allButtons.forEach(btn => {
                 if (btn !== clickedButton) {
                     const content = btn.nextElementSibling;
                     const icon = btn.querySelector('.icon-chevron');
+                    
+                    // Remove 'is-open' to trigger close animation and reset rotation
                     if (content.classList.contains('is-open')) {
                         content.classList.remove('is-open');
                         icon.style.transform = 'rotate(0deg)';
@@ -328,7 +338,10 @@ class Employee {
                 }
             });
             
+            // Then, toggle the content visibility for the clicked section
             currentContent.classList.toggle('is-open');
+            
+            // Rotate the chevron icon for the clicked section
             if (currentContent.classList.contains('is-open')) {
                 currentIcon.style.transform = 'rotate(180deg)';
             } else {
@@ -338,18 +351,25 @@ class Employee {
 
         // Copy Code Logic
         async function copyCode(button) {
+            // Find the closest code block within the same parent container
             const codeContainer = button.parentElement;
             const codeElement = codeContainer.querySelector('code');
             const codeText = codeElement.innerText;
 
             try {
+                // Write text to clipboard
                 await navigator.clipboard.writeText(codeText);
+                
+                // Visual feedback: change icon to a green checkmark
                 button.innerHTML = '<i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>';
-                lucide.createIcons(); 
+                lucide.createIcons(); // Re-render the new icon
+                
+                // Revert back to copy icon after 2 seconds
                 setTimeout(() => {
                     button.innerHTML = '<i data-lucide="copy" class="w-4 h-4 icon-copy"></i>';
                     lucide.createIcons();
                 }, 2000);
+                
             } catch (err) {
                 console.error('Failed to copy text: ', err);
                 alert("Failed to copy code. Your browser might not support this feature.");
