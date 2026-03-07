@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Java Quick Intro</title>
+    <title>BCA Lab Programs</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
@@ -50,15 +50,15 @@
         
         <header class="text-center py-6 mb-4 animate-card delay-1">
             <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-2xl mb-4 shadow-inner">
-                <i data-lucide="code-2" class="w-8 h-8 text-blue-600"></i>
+                <img src="ic_icon.png" class="rounded-2xl"></img>
             </div>
-            <h1 class="text-3xl font-bold text-slate-900 tracking-tight">Java Quick Intro</h1>
-            <p class="mt-2 text-slate-500">A rapid reference guide for syntax and concepts.</p>
+            <h1 class="text-3xl font-bold text-slate-900 tracking-tight">BCA Lab Programs</h1>
+            <p class="mt-2 text-slate-500">A quick reference for Java syntax and common BCA laboratory practical programs.</p>
         </header>
 
         <div class="animate-card delay-2 bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden transition-shadow hover:shadow-md">
             <button onclick="toggleSection(this)" class="w-full text-left px-6 py-4 border-b border-slate-100 flex items-center bg-slate-50/50 hover:bg-slate-100 transition-colors focus:outline-none">
-                <i data-lucide="terminal" class="w-5 h-5 text-blue-500 mr-3"></i>
+                <i class="w-5 h-5 text-blue-500 mr-3">👋🏻</i>
                 <h2 class="text-lg font-semibold text-slate-800 flex-1">Hello World</h2>
                 <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transform transition-transform duration-300 rotate-180 icon-chevron"></i>
             </button>
@@ -70,7 +70,7 @@
                                 <i data-lucide="copy" class="w-4 h-4 icon-copy"></i>
                             </button>
                             <div class="overflow-x-auto dark-scrollbar shadow-inner">
-<pre><code class="text-blue-100 text-sm font-mono leading-relaxed">public class Main {
+<pre><code class="text-blue-100 text-sm font-mono leading-relaxed">public class Sample {
     public static void main(String args[]) {
         System.out.println("Hello World!");
     }
@@ -96,7 +96,7 @@
                                 <i data-lucide="info" class="w-5 h-5 mr-3 flex-shrink-0 text-amber-500 mt-0.5"></i>
                                 <p>All input needs to be entered in the <strong>Input tab</strong> prior to compilation.</p>
                             </div>
-                            <a href="https://kappsmart.com/javacompiler/videos/read_input.mp4" target="_blank" class="inline-flex justify-center items-center text-sm font-medium text-blue-600 hover:text-blue-700 bg-blue-50 px-4 py-2 rounded-lg transition-colors whitespace-nowrap">
+                            <a href="https://od.lk/s/NTBfMzQ4NDI4NThf/compiler_input.mp4" target="_blank" class="inline-flex justify-center items-center text-sm font-medium text-blue-600 hover:text-blue-700 bg-blue-50 px-4 py-2 rounded-lg transition-colors whitespace-nowrap">
                                 <i data-lucide="play-circle" class="w-4 h-4 mr-1.5"></i> Watch Video
                             </a>
                         </div>
@@ -107,7 +107,7 @@
                             <div class="overflow-x-auto dark-scrollbar shadow-inner">
 <pre><code class="text-blue-100 text-sm font-mono leading-relaxed">import java.util.Scanner;
   
-public class Main {
+public class Sample {
     public static void main(String args[]) {
         Scanner reader = new Scanner(System.in);  // Reading from System.in
         
@@ -129,8 +129,8 @@ public class Main {
 
         <div class="animate-card delay-4 bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden transition-shadow hover:shadow-md">
             <button onclick="toggleSection(this)" class="w-full text-left px-6 py-4 border-b border-slate-100 flex items-center bg-slate-50/50 hover:bg-slate-100 transition-colors focus:outline-none">
-                <i data-lucide="variable" class="w-5 h-5 text-purple-500 mr-3"></i>
-                <h2 class="text-lg font-semibold text-slate-800 flex-1">Variable Assignment</h2>
+                <i data-lucide="hash" class="w-5 h-5 text-purple-500 mr-3"></i>
+                <h2 class="text-lg font-semibold text-slate-800 flex-1">Neon Number</h2>
                 <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transform transition-transform duration-300 icon-chevron"></i>
             </button>
             <div class="accordion-content">
@@ -141,10 +141,28 @@ public class Main {
                                 <i data-lucide="copy" class="w-4 h-4 icon-copy"></i>
                             </button>
                             <div class="overflow-x-auto dark-scrollbar shadow-inner">
-<pre><code class="text-blue-100 text-sm font-mono leading-relaxed">int a = 10, b = 10;     // Example of initialization
-double pi = 3.14159;    // declares and assigns a value of PI.
-char c = 'a';
-String d = "a string";</code></pre>
+<pre><code class="text-blue-100 text-sm font-mono leading-relaxed">import java.util.Scanner;
+
+class Sample {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the value of n:");
+        int n = sc.nextInt();
+        int sum, mul, rem;
+        sum = 0;
+        mul = n * n;
+        while (mul > 0) {
+            rem = mul % 10;
+            sum = sum + rem;
+            mul = mul / 10;
+        }
+        if (n == sum) {
+            System.out.println(n + " is a neon number");
+        } else {
+            System.out.println(n + " is NOT a neon number");
+        }
+    }
+}</code></pre>
                             </div>
                         </div>
                     </div>
@@ -154,8 +172,8 @@ String d = "a string";</code></pre>
 
         <div class="animate-card delay-5 bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden transition-shadow hover:shadow-md">
             <button onclick="toggleSection(this)" class="w-full text-left px-6 py-4 border-b border-slate-100 flex items-center bg-slate-50/50 hover:bg-slate-100 transition-colors focus:outline-none">
-                <i data-lucide="git-branch" class="w-5 h-5 text-orange-500 mr-3"></i>
-                <h2 class="text-lg font-semibold text-slate-800 flex-1">Control Flow</h2>
+                <i data-lucide="graduation-cap" class="w-5 h-5 text-orange-500 mr-3"></i>
+                <h2 class="text-lg font-semibold text-slate-800 flex-1">Student Detail</h2>
                 <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transform transition-transform duration-300 icon-chevron"></i>
             </button>
             <div class="accordion-content">
@@ -166,36 +184,50 @@ String d = "a string";</code></pre>
                                 <i data-lucide="copy" class="w-4 h-4 icon-copy"></i>
                             </button>
                             <div class="overflow-x-auto dark-scrollbar shadow-inner">
-<pre><code class="text-blue-100 text-sm font-mono leading-relaxed">// For loop
-for (int i = 0; i < 10; i++) {
-    if (i % 2 == 0)
-        System.out.println(i + " is an even number");
-    else
-        System.out.println(i + " is an odd number");
+<pre><code class="text-blue-100 text-sm font-mono leading-relaxed">import java.util.Scanner;
+
+class Student
+{
+    String USN,NAME,BRANCH;
+    float PERCENTAGE;
+    long PHONE;
+    
+    void getdata()
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the USN:");
+        USN=sc.nextLine();
+        System.out.println("Enter the NAME:");
+        NAME=sc.nextLine();
+        System.out.println("Enter the BRANCH:");
+        BRANCH=sc.nextLine();
+        System.out.println("Enter the PHONE:");
+        PHONE=Long.parseLong(sc.nextLine());
+        System.out.println("Enter the PERCENTAGE:");
+        PERCENTAGE=Integer.parseInt(sc.nextLine());
+    }
+    
+    void display()
+    {
+        System.out.println(" ******* STUDENT DETAIL *******");
+        System.out.println("USN:"+USN);
+        System.out.println("NAME:"+NAME);
+        System.out.println("BRANCH:"+BRANCH);
+        System.out.println("PHONE:"+PHONE);
+        System.out.println("PERCENTAGE:"+PERCENTAGE+"%");
+    }
 }
 
-int[] numbers = {10, 20, 30, 40, 50};
-
-// Fast enumeration
-for (int x : numbers) {
-    System.out.print(x + ",");
+class StudentDetails
+{
+    public static void main(String args[])
+    {
+        Student obj=new Student();
+        obj.getdata();
+        obj.display();
+    }
 }
-
-// Switch statement
-String vegetable = "red pepper";
-String vegetableComment;
-
-switch (vegetable) {
-    case "celery":  
-        vegetableComment = "Add some raisins and make ants on a log.";
-        break;
-    case "cucumber":  
-        vegetableComment = "That would make a good tea sandwich.";
-        break;
-    default: 
-        vegetableComment = "Everything tastes good in soup.";
-        break;
-}</code></pre>
+</code></pre>
                             </div>
                         </div>
                     </div>
@@ -217,7 +249,7 @@ switch (vegetable) {
                                 <i data-lucide="copy" class="w-4 h-4 icon-copy"></i>
                             </button>
                             <div class="overflow-x-auto dark-scrollbar shadow-inner">
-<pre><code class="text-blue-100 text-sm font-mono leading-relaxed">public class Main {
+<pre><code class="text-blue-100 text-sm font-mono leading-relaxed">public class Sample {
     public static void main(String args[]) {
         Employee empOne = new Employee("James Smith");
         empOne.empAge(26);
@@ -262,12 +294,28 @@ class Employee {
                 </div>
             </div>
         </div>
+        
+        <footer class="text-center py-8 mt-4 animate-card delay-5">
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-2 text-sm text-slate-500">
+                <span>&copy; <span id="dynamic-year"></span> BCA N.H. Java Compiler</span>
+                <span class="hidden sm:inline w-1 h-1 bg-slate-300 rounded-full"></span>
+                <span>
+                    Built by 
+                    <a href="https://im-ayu-sh.netlify.app/" class="font-semibold text-slate-700 hover:text-blue-600 hover:underline transition-colors duration-200">
+                        Ayush Patil
+                    </a>
+                </span>
+            </div>
+        </footer>
 
     </div>
 
     <script>
         // Initialize Icons
         lucide.createIcons();
+        
+        //year
+        document.getElementById('dynamic-year').textContent = new Date().getFullYear();
 
         // Accordion Logic with Smooth Grid Animation
         function toggleSection(clickedButton) {
@@ -329,4 +377,3 @@ class Employee {
     </script>
 </body>
 </html>
-
