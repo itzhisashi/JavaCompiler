@@ -95,7 +95,7 @@
             toastTimeout = setTimeout(() => {
                 toastCard.classList.remove('opacity-100', 'translate-y-0');
                 toastCard.classList.add('opacity-0', '-translate-y-4');
-            }, 3500);
+            }, 4000);
         }
 
         function share(platform) {
@@ -134,7 +134,7 @@
                     // Wait exactly 3.5 seconds (3500ms) before opening Instagram
                     setTimeout(() => {
                         window.location.href = shareUrl;
-                    }, 3500);
+                    }, 4000);
                 } else {
                     // Open immediately for all other apps
                     window.location.href = shareUrl;
