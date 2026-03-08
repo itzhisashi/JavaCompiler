@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share Our App</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-950 text-white min-h-screen flex items-center justify-center p-4">
+
+    <div class="w-full max-w-sm bg-gray-900 rounded-3xl shadow-2xl border border-gray-800 p-8 text-center">
+        
+        <div class="mb-8">
+            <div class="w-16 h-16 bg-gradient-to-tr from-blue-500 to-purple-500 rounded-2xl mx-auto mb-4 flex items-center justify-center shadow-lg">
+                <i class="fa-solid fa-share-nodes text-2xl text-white"></i>
+            </div>
+            <h1 class="text-2xl font-semibold mb-2">Share With Friends</h1>
+            <p class="text-gray-400 text-sm">Tap a button below to share the app directly to your favorite platform.</p>
+        </div>
+
+        <div class="flex flex-col gap-4">
+            
+            <button onclick="share('whatsapp')" class="group flex items-center w-full py-3 px-5 bg-gray-800 hover:bg-[#25D366]/20 hover:border-[#25D366]/50 rounded-xl transition-all duration-300 border border-gray-700">
+                <i class="fa-brands fa-whatsapp text-2xl text-[#25D366] w-8"></i>
+                <span class="font-medium ml-2 text-gray-200 group-hover:text-white">WhatsApp</span>
+            </button>
+
+            <button onclick="share('telegram')" class="group flex items-center w-full py-3 px-5 bg-gray-800 hover:bg-[#0088cc]/20 hover:border-[#0088cc]/50 rounded-xl transition-all duration-300 border border-gray-700">
+                <i class="fa-brands fa-telegram text-2xl text-[#0088cc] w-8"></i>
+                <span class="font-medium ml-2 text-gray-200 group-hover:text-white">Telegram</span>
+            </button>
+
+            <button onclick="share('twitter')" class="group flex items-center w-full py-3 px-5 bg-gray-800 hover:bg-gray-700 hover:border-gray-500 rounded-xl transition-all duration-300 border border-gray-700">
+                <i class="fa-brands fa-x-twitter text-2xl text-white w-8"></i>
+                <span class="font-medium ml-2 text-gray-200 group-hover:text-white">X (Twitter)</span>
+            </button>
+
+            <button onclick="share('facebook')" class="group flex items-center w-full py-3 px-5 bg-gray-800 hover:bg-[#1877F2]/20 hover:border-[#1877F2]/50 rounded-xl transition-all duration-300 border border-gray-700">
+                <i class="fa-brands fa-facebook text-2xl text-[#1877F2] w-8"></i>
+                <span class="font-medium ml-2 text-gray-200 group-hover:text-white">Facebook</span>
+            </button>
+
+            <button onclick="share('instagram')" class="group flex items-center w-full py-3 px-5 bg-gray-800 hover:bg-[#E1306C]/20 hover:border-[#E1306C]/50 rounded-xl transition-all duration-300 border border-gray-700">
+                <i class="fa-brands fa-instagram text-2xl text-[#E1306C] w-8"></i>
+                <span class="font-medium ml-2 text-gray-200 group-hover:text-white">Instagram</span>
+            </button>
+
+        </div>
+        <div class="mt-8">
+             <p class="text-gray-400 text-sm">
+        <span>
+            Built by
+            <a href="https://im-ayu-sh.netlify.app/" class="font-semibold text-slate-50 hover:text-blue-600 hover:underline transition-colors duration-200">
+                Ayush Patil
+            </a>
+        </span>
+             </p>
+        </div>
+    </div>
+
+    <script>
+        // --- CUSTOMIZE YOUR TEXT AND LINK HERE ---
+        const customText = "Hey! You have to check out this amazing new app. It's exactly what we were looking for!";
+        const customLink = "https://your-awesome-app.com";
+        // -----------------------------------------
+
+        function share(platform) {
+            // Encode the text and link so they work safely inside URLs
+            const encodedText = encodeURIComponent(customText);
+            const encodedLink = encodeURIComponent(customLink);
+            const encodedCombined = encodeURIComponent(`${customText} ${customLink}`);
+
+            let shareUrl = '';
+
+            switch(platform) {
+                case 'whatsapp':
+                    // WhatsApp takes the combined text and link
+                    shareUrl = `https://api.whatsapp.com/send?text=${encodedCombined}`;
+                    break;
+                case 'telegram':
+                    // Telegram has separate parameters for text and URL
+                    shareUrl = `https://t.me/share/url?url=${encodedLink}&text=${encodedText}`;
+                    break;
+                case 'twitter':
+                    // Twitter uses text and url parameters
+                    shareUrl = `https://twitter.com/intent/tweet?text=${encodedText}&url=${encodedLink}`;
+                    break;
+                case 'facebook':
+                    // Facebook only takes the URL. (They deprecated custom text via sharer)
+                    shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodedLink}`;
+                    break;
+                case 'instagram':
+                    // Fallback to opening Instagram (or directing to app). 
+                    // No direct web intent for pre-filling text exists for IG.
+                    shareUrl = `https://instagram.com`;
+                    alert("Link copied! Open Instagram to paste and share.");
+                    navigator.clipboard.writeText(`${customText} ${customLink}`); // Copies to clipboard as a helper
+                    break;
+            }
+
+            // Open the share link in a new tab/window
+            if (shareUrl) {
+                window.open(shareUrl, '_blank');
+            }
+        }
+    </script>
+</body>
+</html>
+
