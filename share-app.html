@@ -66,14 +66,13 @@
         </div>
     </div>
 
-    <script>
+      <script>
         // --- CUSTOMIZE YOUR TEXT AND LINK HERE ---
         const customText = "Hey! You have to check out this amazing new app. It's exactly what we were looking for!";
         const customLink = "https://your-awesome-app.com";
         // -----------------------------------------
 
         function share(platform) {
-            // Encode the text and link so they work safely inside URLs
             const encodedText = encodeURIComponent(customText);
             const encodedLink = encodeURIComponent(customLink);
             const encodedCombined = encodeURIComponent(`${customText} ${customLink}`);
@@ -82,36 +81,33 @@
 
             switch(platform) {
                 case 'whatsapp':
-                    // WhatsApp takes the combined text and link
-                    shareUrl = `https://api.whatsapp.com/send?text=${encodedCombined}`;
+                    // Native Android WhatsApp URI
+                    shareUrl = `whatsapp://send?text=${encodedCombined}`;
                     break;
                 case 'telegram':
-                    // Telegram has separate parameters for text and URL
-                    shareUrl = `https://t.me/share/url?url=${encodedLink}&text=${encodedText}`;
+                    // Native Android Telegram URI
+                    shareUrl = `tg://msg?text=${encodedCombined}`;
                     break;
                 case 'twitter':
-                    // Twitter uses text and url parameters
-                    shareUrl = `https://twitter.com/intent/tweet?text=${encodedText}&url=${encodedLink}`;
+                    // Native Android Intent for X/Twitter
+                    shareUrl = `intent://post?message=${encodedCombined}#Intent;package=com.twitter.android;scheme=twitter;end;`;
                     break;
                 case 'facebook':
-                    // Facebook only takes the URL. (They deprecated custom text via sharer)
                     shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodedLink}`;
                     break;
                 case 'instagram':
-                    // Fallback to opening Instagram (or directing to app). 
-                    // No direct web intent for pre-filling text exists for IG.
-                    shareUrl = `https://instagram.com`;
+                    shareUrl = `intent://#Intent;package=com.instagram.android;scheme=https;end;`;
                     alert("Link copied! Open Instagram to paste and share.");
-                    navigator.clipboard.writeText(`${customText} ${customLink}`); // Copies to clipboard as a helper
+                    navigator.clipboard.writeText(`${customText} ${customLink}`);
                     break;
             }
 
-            // Open the share link in a new tab/window
+            // CRITICAL FIX: Use location.href instead of window.open to bypass WebView restrictions
             if (shareUrl) {
-                window.open(shareUrl, '_blank');
+                window.location.href = shareUrl;
             }
         }
     </script>
+
 </body>
 </html>
-
