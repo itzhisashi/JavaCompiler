@@ -8,20 +8,31 @@
     <script src="https://unpkg.com/lucide@latest"></script>
    
    <style>
-    /* ... your existing styles ... */
+    /* Smooth scrolling and custom scrollbars */
+    html { scroll-behavior: smooth; background-color: transparent; }
+    body { background-color: transparent; transition: background-color 0.3s ease; }
 
+    /* Theme-Aware Scrollbars */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+
+    /* Dark Theme Overrides - Matching App Grey */
     @media (prefers-color-scheme: dark) {
         body {
-            background-color: #000000 !important; /* Forces black background */
-            color: #ffffff !important;           /* Forces white text */
+            background-color: #121212 !important; /* Adjust this to your app's grey */
+            color: #e2e8f0 !important;
         }
         .bg-white { 
-            background-color: #111827 !important; /* Darker cards */
-            border-color: #374151 !important;
+            background-color: #1e1e1e !important; /* Card background */
+            border-color: #334155 !important;
+            box-shadow: none !important;
         }
-        .text-slate-900, .text-slate-800 { 
-            color: #f3f4f6 !important; 
-        }
+        .bg-slate-50\/50 { background-color: #2d2d2d !important; }
+        .text-slate-900, .text-slate-800, .text-slate-700 { color: #f1f5f9 !important; }
+        .text-slate-500 { color: #94a3b8 !important; }
+        .border-slate-100 { border-color: #334155 !important; }
+        ::-webkit-scrollbar-thumb { background: #475569; }
     }
 
         /* Smooth scrolling and custom scrollbars */
