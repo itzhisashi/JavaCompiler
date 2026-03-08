@@ -6,15 +6,23 @@
     <title>Share Our App</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
     </style>
 </head>
-<body class="bg-gray-950 text-white min-h-screen flex items-center justify-center p-4">
+<body class="bg-gray-950 text-white min-h-screen flex items-center justify-center p-4 relative overflow-hidden">
+
+    <div id="toastCard" class="fixed top-8 left-1/2 transform -translate-x-1/2 -translate-y-4 opacity-0 pointer-events-none transition-all duration-300 z-50 w-11/12 max-w-sm">
+        <div class="bg-gray-800 rounded-2xl shadow-2xl border border-gray-700 p-4 flex flex-col items-center text-center">
+            <div class="flex items-center gap-3 mb-1">
+                <i class="fa-solid fa-circle-check text-green-400 text-lg"></i>
+                <span id="toastMessage" class="font-medium text-sm text-gray-100">Message goes here</span>
+            </div>
+            <span class="text-[10px] text-gray-500 tracking-wider uppercase mt-2 border-t border-gray-700 pt-1 w-full">Modded by Ayush Patil</span>
+        </div>
+    </div>
 
     <div class="w-full max-w-sm bg-gray-900 rounded-3xl shadow-2xl border border-gray-800 p-8 text-center">
         
@@ -27,7 +35,6 @@
         </div>
 
         <div class="flex flex-col gap-4">
-            
             <button onclick="share('whatsapp')" class="group flex items-center w-full py-3 px-5 bg-gray-800 hover:bg-[#25D366]/20 hover:border-[#25D366]/50 rounded-xl transition-all duration-300 border border-gray-700">
                 <i class="fa-brands fa-whatsapp text-2xl text-[#25D366] w-8"></i>
                 <span class="font-medium ml-2 text-gray-200 group-hover:text-white">WhatsApp</span>
@@ -39,7 +46,7 @@
             </button>
 
             <button onclick="share('twitter')" class="group flex items-center w-full py-3 px-5 bg-gray-800 hover:bg-gray-700 hover:border-gray-500 rounded-xl transition-all duration-300 border border-gray-700">
-                <i class="fa-brands fa-x-twitter text-2xl text-white w-8"></i>
+                <i class="fa-brands fa-twitter text-2xl text-[#1DA1F2] w-8"></i>
                 <span class="font-medium ml-2 text-gray-200 group-hover:text-white">X (Twitter)</span>
             </button>
 
@@ -52,25 +59,44 @@
                 <i class="fa-brands fa-instagram text-2xl text-[#E1306C] w-8"></i>
                 <span class="font-medium ml-2 text-gray-200 group-hover:text-white">Instagram</span>
             </button>
-
         </div>
+        
         <div class="mt-8">
              <p class="text-gray-400 text-sm">
-        <span>
-            Built by
-            <a href="https://im-ayu-sh.netlify.app/" class="font-semibold text-slate-50 hover:text-blue-600 hover:underline transition-colors duration-200">
-                Ayush Patil
-            </a>
-        </span>
+                <span>
+                    Built by
+                    <a href="https://im-ayu-sh.netlify.app/" class="font-semibold text-slate-50 hover:text-blue-600 hover:underline transition-colors duration-200">
+                        Ayush Patil
+                    </a>
+                </span>
              </p>
         </div>
     </div>
 
-         <script>
-        // --- CUSTOMIZE YOUR TEXT AND LINK HERE ---
+    <script>
         const customText = "Hey! You have to check out this amazing new app. It's exactly what we were looking for!";
         const customLink = "https://your-awesome-app.com";
-        // -----------------------------------------
+        
+        let toastTimeout; 
+
+        // Function to show the custom toast card
+        function showCustomToast(message) {
+            const toastCard = document.getElementById('toastCard');
+            const toastMessage = document.getElementById('toastMessage');
+            
+            toastMessage.innerText = message;
+            
+            toastCard.classList.remove('opacity-0', '-translate-y-4');
+            toastCard.classList.add('opacity-100', 'translate-y-0');
+
+            clearTimeout(toastTimeout);
+
+            // Hide after 3.5 seconds
+            toastTimeout = setTimeout(() => {
+                toastCard.classList.remove('opacity-100', 'translate-y-0');
+                toastCard.classList.add('opacity-0', '-translate-y-4');
+            }, 3500);
+        }
 
         function share(platform) {
             const encodedText = encodeURIComponent(customText);
@@ -81,36 +107,40 @@
 
             switch(platform) {
                 case 'whatsapp':
-                    // Native Android WhatsApp URI
                     shareUrl = `whatsapp://send?text=${encodedCombined}`;
                     break;
                 case 'telegram':
-                    // Native Android Telegram URI
                     shareUrl = `tg://msg?text=${encodedCombined}`;
                     break;
                 case 'twitter':
-                    // Changed from intent:// to direct twitter:// scheme
                     shareUrl = `twitter://post?message=${encodedCombined}`;
                     break;
                 case 'facebook':
-                    // Facebook strictly requires standard web URLs for sharing
                     shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodedLink}`;
                     break;
                 case 'instagram':
-                    // Changed from intent:// to direct instagram:// scheme
-                    shareUrl = `instagram://app`;
-                    alert("Link copied! Opening Instagram so you can paste and share.");
+                    shareUrl = `instagram://direct-inbox`;
+                    
+                    showCustomToast("Link copied! Paste it in your chat to share.");
+                    
+                    // Copy to clipboard
                     navigator.clipboard.writeText(`${customText} ${customLink}`);
                     break;
             }
 
-            // Execute the redirect
+            // Sync the redirect with the toast timer
             if (shareUrl) {
-                window.location.href = shareUrl;
+                if(platform === 'instagram') {
+                    // Wait exactly 3.5 seconds (3500ms) before opening Instagram
+                    setTimeout(() => {
+                        window.location.href = shareUrl;
+                    }, 3500);
+                } else {
+                    // Open immediately for all other apps
+                    window.location.href = shareUrl;
+                }
             }
         }
     </script>
-
-
 </body>
 </html>
