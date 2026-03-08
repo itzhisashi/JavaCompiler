@@ -66,7 +66,7 @@
         </div>
     </div>
 
-      <script>
+         <script>
         // --- CUSTOMIZE YOUR TEXT AND LINK HERE ---
         const customText = "Hey! You have to check out this amazing new app. It's exactly what we were looking for!";
         const customLink = "https://your-awesome-app.com";
@@ -89,25 +89,28 @@
                     shareUrl = `tg://msg?text=${encodedCombined}`;
                     break;
                 case 'twitter':
-                    // Native Android Intent for X/Twitter
-                    shareUrl = `intent://post?message=${encodedCombined}#Intent;package=com.twitter.android;scheme=twitter;end;`;
+                    // Changed from intent:// to direct twitter:// scheme
+                    shareUrl = `twitter://post?message=${encodedCombined}`;
                     break;
                 case 'facebook':
+                    // Facebook strictly requires standard web URLs for sharing
                     shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodedLink}`;
                     break;
                 case 'instagram':
-                    shareUrl = `intent://#Intent;package=com.instagram.android;scheme=https;end;`;
-                    alert("Link copied! Open Instagram to paste and share.");
+                    // Changed from intent:// to direct instagram:// scheme
+                    shareUrl = `instagram://app`;
+                    alert("Link copied! Opening Instagram so you can paste and share.");
                     navigator.clipboard.writeText(`${customText} ${customLink}`);
                     break;
             }
 
-            // CRITICAL FIX: Use location.href instead of window.open to bypass WebView restrictions
+            // Execute the redirect
             if (shareUrl) {
                 window.location.href = shareUrl;
             }
         }
     </script>
+
 
 </body>
 </html>
