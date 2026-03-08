@@ -8,7 +8,22 @@
     <script src="https://unpkg.com/lucide@latest"></script>
    
    <style>
-       html, body { background-color: transparent !important; }
+    /* ... your existing styles ... */
+
+    @media (prefers-color-scheme: dark) {
+        body {
+            background-color: #000000 !important; /* Forces black background */
+            color: #ffffff !important;           /* Forces white text */
+        }
+        .bg-white { 
+            background-color: #111827 !important; /* Darker cards */
+            border-color: #374151 !important;
+        }
+        .text-slate-900, .text-slate-800 { 
+            color: #f3f4f6 !important; 
+        }
+    }
+
         /* Smooth scrolling and custom scrollbars */
         html { scroll-behavior: smooth; }
         ::-webkit-scrollbar { width: 6px; height: 6px; }
