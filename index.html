@@ -154,6 +154,50 @@ public class Sample {
             </div>
         </div>
 
+
+        <div class="animate-card delay-4 bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden transition-shadow hover:shadow-md">
+            <button onclick="toggleSection(this)" class="w-full text-left px-6 py-4 border-b border-slate-100 flex items-center bg-slate-50/50 hover:bg-slate-100 transition-colors focus:outline-none">
+                <i data-lucide="hash" class="w-5 h-5 text-purple-500 mr-3"></i>
+                <h2 class="text-lg font-semibold text-slate-800 flex-1">Neon Number</h2>
+                <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transform transition-transform duration-300 icon-chevron"></i>
+            </button>
+            <div class="accordion-content">
+                <div class="accordion-inner">
+                    <div class="p-6">
+                        <div class="bg-slate-900 rounded-xl p-4 relative pt-12">
+                            <button onclick="copyCode(this)" class="absolute top-3 right-3 p-2 bg-slate-800 text-slate-400 rounded-lg hover:text-white hover:bg-slate-700 transition-colors focus:outline-none" title="Copy code">
+                                <i data-lucide="copy" class="w-4 h-4 icon-copy"></i>
+                            </button>
+                            <div class="overflow-x-auto dark-scrollbar shadow-inner">
+<pre><code class="text-blue-100 text-sm font-mono leading-relaxed">import java.util.Scanner;
+
+class Sample {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the value of n:");
+        int n = sc.nextInt();
+        int sum, mul, rem;
+        sum = 0;
+        mul = n * n;
+        while (mul > 0) {
+            rem = mul % 10;
+            sum = sum + rem;
+            mul = mul / 10;
+        }
+        if (n == sum) {
+            System.out.println(n + " is a neon number");
+        } else {
+            System.out.println(n + " is NOT a neon number");
+        }
+    }
+}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="animate-card delay-4 bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden transition-shadow hover:shadow-md">
             <button onclick="toggleSection(this)" class="w-full text-left px-6 py-4 border-b border-slate-100 flex items-center bg-slate-50/50 hover:bg-slate-100 transition-colors focus:outline-none">
                 <i data-lucide="hash" class="w-5 h-5 text-purple-500 mr-3"></i>
