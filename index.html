@@ -158,7 +158,7 @@ public class Sample {
         <div class="animate-card delay-4 bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden transition-shadow hover:shadow-md">
             <button onclick="toggleSection(this)" class="w-full text-left px-6 py-4 border-b border-slate-100 flex items-center bg-slate-50/50 hover:bg-slate-100 transition-colors focus:outline-none">
                 <i data-lucide="hash" class="w-5 h-5 text-purple-500 mr-3"></i>
-                <h2 class="text-lg font-semibold text-slate-800 flex-1">Neon Number</h2>
+                <h2 class="text-lg font-semibold text-slate-800 flex-1"GCD</h2>
                 <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transform transition-transform duration-300 icon-chevron"></i>
             </button>
             <div class="accordion-content">
@@ -171,25 +171,32 @@ public class Sample {
                             <div class="overflow-x-auto dark-scrollbar shadow-inner">
 <pre><code class="text-blue-100 text-sm font-mono leading-relaxed">import java.util.Scanner;
 
-class Sample {
-    public static void main(String args[]) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the value of n:");
-        int n = sc.nextInt();
-        int sum, mul, rem;
-        sum = 0;
-        mul = n * n;
-        while (mul > 0) {
-            rem = mul % 10;
-            sum = sum + rem;
-            mul = mul / 10;
+public class GCD{
+    public static void main(String args[]){
+        int a,b;
+    a=60;
+    b=36;
+        System.out.println("a="+a);
+        System.out.println("b="+b);
+        if(a==0){
+            System.out.println(b + " is GCD");
         }
-        if (n == sum) {
-            System.out.println(n + " is a neon number");
-        } else {
-            System.out.println(n + " is NOT a neon number");
+        else if(b==0){
+            System.out.println(a+" is GCD");
         }
+        else{
+            while(a!=b){
+                if(a>b){
+                    a=a-b;
+                }
+                else{
+                    b=b-a;
+            }
     }
+    System.out.println(a+" is GCD");
+  }
+}
+}
 }</code></pre>
                             </div>
                         </div>
